@@ -1,0 +1,27 @@
+{
+  "fields" : [
+    {
+      "name": "email",
+      "type": "text",
+      "validation-rules": {
+        "required": true,
+        "valid_email": true
+      },
+      "db": {
+        "table": "users",
+        "field-name": "email"
+      }
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "validation-rules": {
+        "required": true
+      },
+      "db": {
+        "table": "users",
+        "field-name": "password"
+      }
+    }
+  ]
+}
