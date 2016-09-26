@@ -1,27 +1,59 @@
 {
+  "formName" : "users",
+  "modelName" : "mymodel",
+  "output" : {
+    "controllers": "./output/controllers.php",
+    "models": "./output/models.php",
+    "views": "./output/views.php"
+  },
   "fields" : [
     {
       "name": "email",
-      "type": "text",
-      "validation-rules": {
+      "type": "email",
+      "template": "input",
+      "rules": {
+        "trim": true,
         "required": true,
         "valid_email": true
       },
       "db": {
         "table": "users",
-        "field-name": "email"
+        "field_name": "email"
       }
     },
     {
       "name": "password",
       "type": "password",
-      "validation-rules": {
+      "template": "input",
+      "rules": {
+        "trim": true,
         "required": true
       },
       "db": {
         "table": "users",
-        "field-name": "password"
+        "field_name": "password"
       }
+    },
+    {
+      "name": "myradio",
+      "type": "radio",
+      "template": "choice-inline",
+      "options" : [
+        {"value":1,"label":"option 1"},
+        {"value":2,"label":"option 2"},
+        {"value":3,"label":"option 3"}
+      ],
+      "rules": {
+        "trim": true,
+        "required": true
+      },
+      "db": {
+        "table": "users",
+        "field_name": "password"
+      }
+    },
+    {
+      "template": "submit"
     }
   ]
 }
